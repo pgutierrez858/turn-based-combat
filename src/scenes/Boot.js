@@ -6,6 +6,7 @@
  */
 export class Boot extends Phaser.Scene {
   constructor() {
+    console.log("constructor de Boot");
     super("Boot");
   }
 
@@ -14,6 +15,8 @@ export class Boot extends Phaser.Scene {
   }
 
   create() {
+    window.localStorage.setItem("cartas", [1, 2, 3])
+    window.localStorage.getItem("cartas") // [1, 2, 3]
     this.scene.start("Preloader");
   }
 }
