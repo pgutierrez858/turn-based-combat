@@ -21,7 +21,7 @@ export class Component {
   componentID;
 
   /**
-   * ID of owner or parent componetn. By default, this is set to -1 to indicate that the component belongs to "the game".
+   * ID of owner or parent component. By default, this is set to -1 to indicate that the component belongs to "the game".
    * @protected
    * @type {integer}
    */
@@ -42,12 +42,37 @@ export class Component {
   componentType;
 
   /**
-   * @param {ComponentType} type 
-   * @param {string} name 
+   * List of components present in this deck.
+   * @type {Array<Component>}
+   */
+  components;
+
+  /**
+   * @param {ComponentType} type
+   * @param {string} name
    */
   constructor(type, name) {
     this.componentID = Component.ID++;
     this.componentType = type;
     this.componentName = name;
   } // constructor
+
+  /**
+   * Checks whether this component can contain other components inside of it.
+   */
+  isComponentContainer() {
+    return !!this.components;
+  } // isComponentContainer
+
+  /**
+   * Returns the array of components of the current object. To be used for iterations mostly.
+   * Returns null if the component cannot hold nested items.
+   */
+  getComponents() {
+    return this.components;
+  } // getComponents
+
+  setOwnerId(id) {
+    this.ownerId = id;
+  } // setOwnerId
 } // Component

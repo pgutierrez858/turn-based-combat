@@ -3,6 +3,8 @@ export class Game extends Phaser.Scene {
     super("Game");
   }
 
+  
+
   create() {
     this.cameras.main.setBackgroundColor(0x00ff00);
 

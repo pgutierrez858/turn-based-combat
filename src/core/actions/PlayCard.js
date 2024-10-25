@@ -45,7 +45,6 @@ export class PlayCard extends AbstractAction {
       /** @type {Card} */
       const c = gs.getComponentById(cid);
 
-      console.log(c);
       if (c != null) {
         // the card is in the player's hand and they have enough energy to play it
         return (
@@ -74,7 +73,7 @@ export class PlayCard extends AbstractAction {
    */
   playCard(gameState, card) {
     // remove card from hand
-    gameState.getPlayerHand().remove(card);
+    gameState.playerHand.remove(card);
 
     // pay the cost of playing the card
     gameState.playerEnergy -= card.energyCost;

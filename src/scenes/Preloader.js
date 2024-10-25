@@ -25,6 +25,12 @@ export class Preloader extends Phaser.Scene {
     this.load.setPath("assets");
 
     this.load.image("logo", "logo.png");
+
+    this.load.atlas(
+      "ironclad-start-cards",
+      "cards/Cards_Ironclad_Start.png",
+      "cards/Cards_Ironclad_Start.json"
+    );
   }
 
   create() {

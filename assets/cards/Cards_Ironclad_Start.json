@@ -1,0 +1,30 @@
+{
+  "frames": {
+    "bash": {
+      "frame": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "strike": {
+      "frame": { "x": 744, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "defend": {
+      "frame": { "x": 1488, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    }
+  },
+  "meta": {
+    "image": "Cards_Ironclad_Start.png",
+    "size": { "w": 3720, "h": 2078 },
+    "scale": "1"
+  }
+}

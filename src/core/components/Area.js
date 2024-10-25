@@ -9,6 +9,7 @@ export class Area extends Component {
   /**
    * Collection of components in the area mapped to their IDs.
    * @protected
+   * @override
    * @type {Map<integer, Component>}
    */
   components;
@@ -18,6 +19,13 @@ export class Area extends Component {
     this.components = new Map();
     this.ownerId = ownerID;
   }
+
+  /**
+   * @override
+   */
+  getComponents() {
+    return [...this.components.values()];
+  } // getComponents
 
   /**
    * Clears the collection of components.
@@ -49,11 +57,14 @@ export class Area extends Component {
   } // getComponent
 
   /**
-   * Adds a component to the collection.
+   * Adds a component to the collection using its own ID as the key in the map.
    * @param {Component} component
    */
   putComponent(component) {
     this.components.set(component.componentID, component);
+    if (component.isComponentContainer()) {
+      component.getComponents().forEach((c) => this.putComponent(c));
+    }
   } // putComponent
 
   /**

@@ -38,7 +38,6 @@ export class ForwardModel extends AbstractForwardModel {
     /** @type {Array<AbstractAction>} */
     const possibleActions = this.getAllActions(gs);
     for (const act of possibleActions) {
-      console.log(act);
       if (act !== null && act.canBePlayed(gs)) {
         actions.push(act);
       }

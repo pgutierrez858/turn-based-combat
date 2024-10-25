@@ -14,12 +14,6 @@ export class Deck extends Component {
   capacity;
 
   /**
-   * List of components present in this deck.
-   * @type {Array<Component>}
-   */
-  components;
-
-  /**
    * Visibility mode of this particular deck (whether it should be viewable or not).
    * @type {boolean}
    */
@@ -30,13 +24,6 @@ export class Deck extends Component {
     this.visible = visible;
     this.components = [];
   } // constructor
-
-  /**
-   * Returns the array of components of the current deck. To be used for iterations mostly.
-   */
-  getComponents() {
-    return this.components;
-  } // getComponents
 
   /**
    * Draws the first component of the deck.
@@ -59,6 +46,7 @@ export class Deck extends Component {
     ) {
       const elem = this.components[index];
       this.components = this.components.filter((_, i) => i !== index);
+      elem.ownerId = -1;
       return elem;
     }
     return null;
@@ -70,8 +58,30 @@ export class Deck extends Component {
    */
   add(c) {
     if (c !== null) {
-      c.ownerId = this.ownerId;
+      c.ownerId = this.componentID;
       this.components.push(c);
     }
   } // add
+
+  /**
+   * Remove the given component.
+   * @param {Component} c component to remove.
+   */
+  remove(c) {
+    c.setOwnerId(-1);
+    const index = this.components.indexOf(c);
+    if (index >= 0) {
+      return this.removeAtIndex(index);
+    }
+    return false;
+  } // remove
+
+  removeAtIndex(idx) {
+    if (idx >= 0 && idx < this.components.length) {
+      this.components[idx].setOwnerId(-1);
+      this.components.splice(idx, 1);
+      return true;
+    }
+    return false;
+  } // removeAtIndex
 } // Deck
