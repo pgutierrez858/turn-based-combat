@@ -10,7 +10,7 @@ export class AbstractForwardModel {
    * @abstract
    * @param {AbstractGameState} firstState the state to be converted into the initial game state.
    */
-  setup(firstState) {}
+  _setup(firstState) {} // _next
 
   /**
    * Applies the given action to the game state and executes any relevant game rules
@@ -24,16 +24,84 @@ export class AbstractForwardModel {
    * @param {AbstractGameState} currentState state to be modified by action
    * @param {AbstractAction} action action to apply over the state
    */
-  next(currentState, action) {} // next
+  _next(currentState, action) {
+    // TODO: _beforeAction
+    if (!!action) {
+      action.execute(currentState);
+    } else {
+      console.error("No action selected by current player.");
+    }
+
+    /**
+     * Register the action on top of the stack (unless it's the same as the one we just executed,
+     * in which case we just move on to the next one).
+     */
+    const actionsInProgressCount = currentState.actionsInProgress.length;
+    if (actionsInProgressCount > 0) {
+      const topOfStack =
+        currentState.actionsInProgress[actionsInProgressCount - 1];
+      if (topOfStack !== action) {
+        topOfStack._afterAction(currentState, action);
+      } else {
+        if (actionsInProgressCount > 1) {
+          const nextOnStack =
+            currentState.actionsInProgress[actionsInProgressCount - 2];
+          nextOnStack._afterAction(currentState, action);
+        }
+      }
+      this._afterAction(currentState, action);
+    }
+  } // _next
+
+  /**
+   * Applies the given action to the game state and executes any other game rules.
+   * @param {AbstractGameState} currentState
+   * @param {AbstractAction} action
+   */
+  next(currentState, action) {
+    if (!!action) {
+      // TODO: this is a good point to record actions
+      this._next(currentState, action);
+    } else {
+      // TODO: handle illegal actions
+      console.error("Tried to play an illegal action.");
+    }
+    // TODO: good point to advance ticks if we implement them
+  } // next
 
   /**
    * Computes a list of available actions in the current game state.
-   * @protected
-   * @abstract
+   * @public
    * @param {AbstractGameState} gameState The state from which to compute the available actions.
    * @returns {Array<AbstractAction>} available actions at the current state
    */
-  computeAvailableActions(gameState) {}
+  computeAvailableActions(gameState) {
+    if (gameState.isActionInProgress()) {
+      return gameState.actionsInProgress[
+        gameState.actionsInProgress.length - 1
+      ]._computeAvailableActions(gameState);
+    } else {
+      return this._computeAvailableActions(gameState);
+    }
+  } // computeAvailableActions
+
+  /**
+   * To be implemented by each specific forward model. Calculate the list of
+   * currently available actions.
+   * @protected
+   * @abstract
+   * @param {AbstractGameState} gameState
+   */
+  _computeAvailableActions(gameState) {} // _computeAvailableActions
+
+  /**
+   * Apply any after-action rules to the current game state.
+   * @protected
+   * @abstract
+   * @param {AbstractGameState} currentState
+   * @param {AbstractAction} actionTaken
+   */
+  _afterAction(currentState, actionTaken) {} // _afterAction
 
   /**
    * Handles the end of the player's current turn.

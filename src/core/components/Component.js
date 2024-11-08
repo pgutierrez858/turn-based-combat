@@ -75,4 +75,8 @@ export class Component {
   setOwnerId(id) {
     this.ownerId = id;
   } // setOwnerId
+
+  getComponentId() {
+    return this.componentID;
+  } // getComponentId
 } // Component

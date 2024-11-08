@@ -1,0 +1,121 @@
+{
+  "frames": {
+    "cultist-spike-slime": {
+      "frame": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "cultist-green-louse": {
+      "frame": { "x": 744, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "fungi-beast-fungi-beast": {
+      "frame": { "x": 1488, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "small-slime-acid-smile-spike-slime": {
+      "frame": { "x": 2232, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "red-louse-green-louse-red-louse": {
+      "frame": { "x": 2976, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "large-slime": {
+      "frame": { "x": 3720, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "sneaky-gremlin": {
+      "frame": { "x": 4464, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "mad-gremlin": {
+      "frame": { "x": 5208, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "blue-slaver": {
+      "frame": { "x": 5952, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "red-slaver": {
+      "frame": { "x": 6696, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "looter": {
+      "frame": { "x": 0, "y": 1039, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "jaw-worm": {
+      "frame": { "x": 744, "y": 1039, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "cultist": {
+      "frame": { "x": 1488, "y": 1039, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "jaw-worm-2": {
+      "frame": { "x": 2232, "y": 1039, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "red-louse-green-louse": {
+      "frame": { "x": 2976, "y": 1039, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "small-slime-acid-slime": {
+      "frame": { "x": 3720, "y": 1039, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    }
+  },
+  "meta": {
+    "image": "Enemies_Act1.png",
+    "size": { "w": 7440, "h": 3118 },
+    "scale": "1"
+  }
+}

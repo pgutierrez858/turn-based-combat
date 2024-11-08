@@ -82,6 +82,7 @@ export class GameState extends AbstractGameState {
       this.playerDeck,
       this.playerHand,
       this.exhaustPile,
+      ...this.enemies
     ];
   } // _getAllComponents
 } // GameState

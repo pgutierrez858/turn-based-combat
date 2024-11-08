@@ -1,5 +1,6 @@
 import { Component } from "./Component.js";
 import { ComponentType } from "../CoreConstants.js";
+import { AbstractAction } from "../actions/AbstractAction.js";
 
 export class Card extends Component {
   /**
@@ -33,45 +34,29 @@ export class Card extends Component {
 
   /**
    * List of effects to execute *sequentially* after card is played.
-   * @type {Array}
+   * @type {Array<AbstractAction>}
    */
   immediateEffects;
 
   /**
-   * @param {string} name
+   * Whether this card's action has already been played and completed.
    */
-  constructor(name) {
-    super(ComponentType.CARD, name);
-    this.immediateEffects = [];
+  actionPlayed = false;
+
+  constructor({
+    uid,
+    name,
+    cardType,
+    annotation,
+    energyCost,
+    immediateEffects,
+  }) {
+    super(ComponentType.CARD, "");
+    this.uid = uid;
+    this.name = name;
+    this.cardType = cardType;
+    this.annotation = annotation;
+    this.energyCost = energyCost;
+    this.immediateEffects = immediateEffects;
   } // constructor
-
-  /**
-   * Attempts to generate a card based on a given definition in JSON format.
-   * @param {Object} cardDef the definition of the card that we wish to instantiate.
-   * @returns a new card from the provided definition if this was valid, null otherwise.
-   */
-  static loadCardFromJSON(cardDef) {
-    if (!this.isValidCharacterCard(cardDef)) return null;
-
-    let card = new Card();
-    Object.assign(card, cardDef);
-    return card;
-  } // loadCardFromJSON
-
-  /**
-   * @param {Object} cardDef the definition of the card that we wish to validate.
-   * @returns whether the card definition is a valid character card.
-   */
-  static isValidCharacterCard(cardDef) {
-    const propertiesToCheck = [
-      "name",
-      "energyCost",
-      "cardType",
-      "annotation",
-      "immediateEffects",
-    ];
-    /** @todo Check types + immediateEffects is a valid array of actual effects. For this example,
-     * I'm just adding a very basic properties check, but this should be as thorough as possible! */
-    return propertiesToCheck.every((p) => Object.hasOwn(cardDef, p));
-  } // isValidCharacterCard
 } // Card

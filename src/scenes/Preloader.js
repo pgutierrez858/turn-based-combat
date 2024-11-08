@@ -31,6 +31,12 @@ export class Preloader extends Phaser.Scene {
       "cards/Cards_Ironclad_Start.png",
       "cards/Cards_Ironclad_Start.json"
     );
+
+    this.load.atlas(
+      "enemies-act-1",
+      "enemies/Enemies_Act1.png",
+      "enemies/Enemies_Act1.json"
+    );
   }
 
   create() {

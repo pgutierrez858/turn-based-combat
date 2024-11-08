@@ -1,8 +1,3 @@
-import { ForwardModel } from "./core/forwardModel/ForwardModel.js";
-import { GameParameters } from "./core/GameParameters.js";
-import { GameState } from "./core/state/GameState.js";
-
-
 import { Boot } from "./scenes/Boot.js";
 import { Game } from "./scenes/Game.js";
 import { GameOver } from "./scenes/GameOver.js";
@@ -23,13 +18,3 @@ const config = {
 };
 
 new Phaser.Game(config);
-
-const gameState = new GameState(new GameParameters());
-gameState.reset();
-const forwardModel = new ForwardModel();
-forwardModel.setup(gameState);
-console.log(gameState)
-const actions = forwardModel.computeAvailableActions(gameState);
-console.log(actions);
-actions[0].execute(gameState)
-console.log(gameState)

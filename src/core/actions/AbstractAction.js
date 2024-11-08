@@ -24,4 +24,12 @@ export class AbstractAction {
    * @returns {string}
    */
   getString(gameState) {}
+
+  /**
+   * @abstract
+   * Create a copy of this action, with all of its variables.
+   * No references to components to be kept in actions, only primitive types.
+   * @returns {AbstractAction} new Abstract action object with same properties.
+   */
+  copy() {}
 } // Action

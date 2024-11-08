@@ -2,11 +2,11 @@ import { AbstractAction } from "../actions/AbstractAction.js";
 import { PlayCard } from "../actions/PlayCard.js";
 import { Deck } from "../components/Deck.js";
 import { GamePhase, GameState } from "../state/GameState.js";
-import { CardData } from "../StSTypes.js";
+import { CardData, EnemyData } from "../StSTypes.js";
 import { AbstractForwardModel } from "./AbstractForwardModel.js";
 
 export class ForwardModel extends AbstractForwardModel {
-  setup(firstState) {
+  _setup(firstState) {
     /** @type {GameState} */
     const gs = firstState;
 
@@ -19,7 +19,7 @@ export class ForwardModel extends AbstractForwardModel {
     gs.playerEnergy = 3;
     gs.playerHealth = 10;
     gs.playerRelics = [];
-    gs.enemies = [];
+    gs.enemies = [EnemyData.loadRandomEncounterFromActOne()];
 
     gs.gamePhase = GamePhase.PLAYER_TURN;
 
@@ -30,7 +30,12 @@ export class ForwardModel extends AbstractForwardModel {
     }
   } // setup
 
-  computeAvailableActions(gameState) {
+  /**
+   * @override
+   * @param {GameState} gameState
+   * @returns
+   */
+  _computeAvailableActions(gameState) {
     const actions = [];
     /** @type {GameState} */
     const gs = gameState;
@@ -44,7 +49,11 @@ export class ForwardModel extends AbstractForwardModel {
     }
 
     return actions;
-  } // computeAvailableActions
+  } // _computeAvailableActions
+
+  _afterAction(currentState, actionTaken) {
+
+  } // _afterAction
 
   /**
    * Create a list of all actions that might be possible in the current state, regardless

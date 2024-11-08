@@ -12,11 +12,11 @@ export class PlayCard extends AbstractAction {
 
   /**
    *
-   * @param {Card} card
+   * @param {integer} cardUID
    */
-  constructor(card) {
+  constructor({ cardUID }) {
     super();
-    this.cardUID = card.uid;
+    this.cardUID = cardUID;
   } // constructor
 
   /**
@@ -79,11 +79,21 @@ export class PlayCard extends AbstractAction {
     gameState.playerEnergy -= card.energyCost;
 
     for (let action of card.immediateEffects) {
+      card.actionPlayed = false; // this is set by each action, preventing the next ones (but all will be executed)
       action.execute(gameState);
     }
+    card.actionPlayed = false;
   } // playCard
 
-  getString(_) {
-    return `Play card with ID ${this.cardID}`;
+  /**
+   *
+   * @param {GameState} gs
+   * @returns
+   */
+  getString(gs) {
+    if (this.cardComponentID < 0) return "Invalid Play Card Action.";
+    /** @type {Card} */
+    const card = gs.getComponentById(this.cardComponentID);
+    return `Play card "${card.name}" [ID: ${this.cardComponentID}]`;
   } // getString
 } // PlayCard

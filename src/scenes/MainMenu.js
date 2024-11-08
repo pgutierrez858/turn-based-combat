@@ -9,7 +9,7 @@ export class MainMenu extends Phaser.Scene {
 
     this.add.image(512, 300, "logo");
 
-    this.add.sprite(200, 650, "ironclad-start-cards", "bash").setScale(0.25);
+    this.add.sprite(200, 650, "enemies-act-1", "jaw-worm").setScale(0.25);
     this.add.sprite(400, 650, "ironclad-start-cards", "strike").setScale(0.25);
     this.add.sprite(600, 650, "ironclad-start-cards", "defend").setScale(0.25);
 
