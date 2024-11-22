@@ -4,6 +4,10 @@ import { GameOver } from "./scenes/GameOver.js";
 import { MainMenu } from "./scenes/MainMenu.js";
 import { Preloader } from "./scenes/Preloader.js";
 
+const response = await fetch("./assets/cards/ironclad_cards_definitions.json");
+const data = await response.json();
+console.log(data);
+
 const config = {
   type: Phaser.AUTO,
   width: 1024,

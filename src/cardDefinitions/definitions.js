@@ -7,7 +7,7 @@ export const ironcladCards = [
   {
     class: Card,
     data: {
-      uid: 1,
+      uid: 0,
       name: "Strike",
       annotation: "1{attack}.",
       cardType: "Attack",

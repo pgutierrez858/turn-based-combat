@@ -1,21 +1,21 @@
 {
   "frames": {
-    "bash": {
-      "frame": { "x": 0, "y": 0, "w": 744, "h": 1039 },
-      "rotated": false,
-      "trimmed": false,
-      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
-      "sourceSize": { "w": 744, "h": 1039 }
-    },
-    "strike": {
+    "0": {
       "frame": { "x": 744, "y": 0, "w": 744, "h": 1039 },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
       "sourceSize": { "w": 744, "h": 1039 }
     },
-    "defend": {
+    "1": {
       "frame": { "x": 1488, "y": 0, "w": 744, "h": 1039 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },
+      "sourceSize": { "w": 744, "h": 1039 }
+    },
+    "2": {
+      "frame": { "x": 0, "y": 0, "w": 744, "h": 1039 },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": { "x": 0, "y": 0, "w": 744, "h": 1039 },

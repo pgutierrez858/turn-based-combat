@@ -1,1 +1,1 @@
-export const ironCladStartingDeck = [1, 1, 1, 1, 1, 1];
+export const ironCladStartingDeck = [0, 0, 0, 0, 0];

@@ -1,0 +1,27 @@
+[
+  {
+    "class": "Card",
+    "data": {
+      "uid": 1,
+      "name": "Strike",
+      "annotation": "1{attack}.",
+      "cardType": "Attack",
+      "energyCost": 1,
+      "immediateEffects": [
+        {
+          "class": "SingleTargetCompoundAction",
+          "data": {
+            "actions": [
+              {
+                "class": "DealDamage",
+                "data": {
+                  "damage": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
